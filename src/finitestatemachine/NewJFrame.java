@@ -40,21 +40,23 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jtxtCheck = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jlbl2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtxtRules = new javax.swing.JTextArea();
+        jButton5 = new javax.swing.JButton();
+        lblAccept = new javax.swing.JLabel();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Enter a Word: ");
 
-        jlbl2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        jButton1.setText("Check Word");
+        jButton1.setText("Run");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -74,6 +76,16 @@ public class NewJFrame extends javax.swing.JFrame {
         jtxtRules.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jtxtRules);
 
+        jButton5.setText("Reset");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        lblAccept.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblAccept.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,18 +96,26 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jlbl2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtxtCheck, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton5)
+                                        .addGap(63, 63, 63))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(lblAccept, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jtxtCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(jButton2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 124, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -104,15 +124,18 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jtxtCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxtCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAccept, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addComponent(jlbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,7 +150,7 @@ public class NewJFrame extends javax.swing.JFrame {
         //Display error message
         if (str.isEmpty())
         {
-            jlbl2.setText("Select a File");
+            lblAccept.setText("Select a File");
         }
         //continue
         //Remove white spaces, letters, change a/b to digits
@@ -137,64 +160,89 @@ public class NewJFrame extends javax.swing.JFrame {
             str = str.trim();
             str = str.toLowerCase();
             
-            
-            int startState = 0;
-            
-            String a = str.substring(str.indexOf("start state ")+ 12, str.indexOf("\n") - 1);
-            startState =  Integer.parseInt(a);
-            str = str.substring(str.indexOf("\n")+1, str.length());
+            int startState = 1;
+            //parse rules
             str = str.replaceAll("\r","");
-            a = str.substring(str.indexOf("accepting states ")+ 17, str.indexOf("\n"));
-            String[] acceptingStates = a.split(" ");
-            
-            str = str.substring(str.indexOf("\n")+1, str.length());
-            str = str.substring(str.indexOf("\n")+1, str.length());
-            //str = str.replace("a", "1");
-            //str = str.replace("b", "2");
-            str = str.replaceAll("[^a-z0-9]+"," ");
             str = str.replaceAll("[g]","");
-            str = str.replaceAll(" ",",");
-            str = str.replaceAll(",,","\n");
-            str = str.replaceAll(","," ");
+            str = str.replaceAll("[(]","");
+            str = str.replaceAll("[)]","");
+            str = str.replaceAll("[=]",",");
             str = str.trim();
-            String[] word = str.split("\n");
-            int n = word.length -1;        
-
+            String[] Rules = str.split("\n");
+            int n = Rules.length; 
             //jtxtRules.setText(str);
+            int currentState = startState;
             
-            //form 2d array
-            int[][] StateTable = new int[n][265];
-            for (int j = 0; j <= n; j++)
+            //Creates a 2d array for state, char, and direction
+            int[][]NewStateArr = new int[n][265];
+            for (int j = 0; j <= n-1; j++)
             {
-                String[] currentLine = word[j].split(" ");
+                String[] currentLine = Rules[j].split(",");
                 int state = Integer.parseInt(currentLine[0]);
                 char match = currentLine[1].charAt(0);
                 int next = Integer.parseInt(currentLine[2]);
-                StateTable[state][match] = next;
+                NewStateArr[state][match] = next;
             }     
             
-            
-            int currentState = startState;
-            
-            for (int j = 0; j <= jtxtCheck.getText().length()-1; j++)
+            char[][]NewCharArr = new char[n][265];
+            for (int j = 0; j <= n-1; j++)
             {
-                char curchar = jtxtCheck.getText().charAt(j);
-                if (StateTable[currentState][curchar] != 0)
-                {
-                    currentState = StateTable[currentState][curchar];
-                }
-            }
-                
-            jlbl2.setText("String Rejected");   
-            for (String accept : acceptingStates)  
-            {   
-                if (Integer.parseInt(accept) == currentState)       
-                    jlbl2.setText("String Accepted");
-            }
+                String[] currentLine = Rules[j].split(",");
+                int state = Integer.parseInt(currentLine[0]);
+                char match = currentLine[1].charAt(0);
+                char next = currentLine[3].charAt(0);
+                NewCharArr[state][match] = next;
+            }     
             
+            int[][]NewDirectionArr = new int[n][265];
+            for (int j = 0; j <= n-1; j++)
+            {
+                String[] currentLine = Rules[j].split(",");
+                int state = Integer.parseInt(currentLine[0]);
+                char match = currentLine[1].charAt(0);
+                int next = 0;
+                if (currentLine[4].equals("l"))
+                    next = -1;
+                if (currentLine[4].equals("r"))
+                    next = 1;
+                NewDirectionArr[state][match] = next;
+            }  
+            
+            //match char, change, move
+            String strBuff = jtxtCheck.getText();
+            int pos = 0;
+            boolean found = true;
+            while (found)
+            {
+                found = false;
+                if (pos == strBuff.length())
+                    strBuff = strBuff + " ";
+                char curchar = strBuff.charAt(pos);
+                    
+                if (NewStateArr[currentState][curchar] != 0)
+                {
+                    String tc = Character.toString(NewCharArr[currentState][curchar]);
+                    currentState = NewStateArr[currentState][curchar];
+                    strBuff = strBuff.substring(0, pos) 
+                            + tc
+                            + strBuff.substring(pos +1, strBuff.length());
+                    pos += NewDirectionArr[currentState][curchar];
+                    if (pos == -1)
+                    {
+                        pos = 0;
+                        strBuff = " " + strBuff;
+                    }
+                    found = true;
+                }
+            }                   
+                         
+            //if word is in language
+            if (currentState == 2)       
+                    lblAccept.setText("String Accepted");
+            else
+                lblAccept.setText("String Rejected");            
                 
             }
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -219,21 +267,28 @@ public class NewJFrame extends javax.swing.JFrame {
               buffer.append(ch);
             }
             this.jtxtRules.setText(buffer.toString().trim());
-            this.jlbl2.setText("");
+            this.lblAccept.setText("");
           }
           catch (FileNotFoundException ex)
           {
-            this.jlbl2.setText("File Not Found!!!");
+            this.lblAccept.setText("File Not Found!!!");
           }
           catch (IOException ex)
           {
-            this.jlbl2.setText("Read Error!!!");
+            this.lblAccept.setText("Read Error!!!");
           }
               
     }
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        jtxtRules.setText("");
+        lblAccept.setText("");
+        jtxtCheck.setText("");
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,10 +328,12 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jlbl2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jtxtCheck;
     private javax.swing.JTextArea jtxtRules;
+    private javax.swing.JLabel lblAccept;
     // End of variables declaration//GEN-END:variables
 }
